@@ -1,0 +1,30 @@
+<template>
+  <div class="profile">
+    <h2>Profile Page ({{ UserId }})</h2>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "profile",
+  data() {
+    return {
+      UserId: this.$route.params.user_id,
+    };
+  },
+  methods: {
+    updateId() {
+      this.UserId = this.$route.params.user_id;
+    },
+  },
+  watch: {
+    $route: "updateId",
+  },
+};
+</script>
+
+<style scoped>
+h2 {
+  color: green;
+}
+</style>
